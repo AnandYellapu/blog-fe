@@ -1,13 +1,1077 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+html, body {
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+  
+  body {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-size: 16px;
+    /* background-color: #f4f4f4; */
+  }
+  
+  html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+
+/* Container Styles */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Home Component Styles */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 1px solid black; */
+  border-radius: 5px;
+  /* margin-top: 20px; */
+  /* margin-bottom: 20px; */
+}
+
+/* Hero Section Styles */
+.hero {
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 70px;
+}
+
+.logo-icon1 {
+  font-size: 5rem;
+  color: #3498db;
+  transition: transform 0.3s ease;
+}
+
+.logo-icon1:hover {
+  transform: scale(1.2);
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  margin-top: 20px;
+  color: #333;
+  letter-spacing: 1px;
+}
+
+.hero-description {
+  font-size: 1.2rem;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.hero-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #fff;
+  background-color: #3498db;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.hero-button:hover {
+  background-color: #2075c1;
+}
+
+/* Featured Posts Section Styles */
+.featured-posts {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.featured-posts-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+  letter-spacing: 1px;
+}
+
+.post-card {
+  width: 800px;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+}
+
+.post-card-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+  letter-spacing: 0.5px;
+}
+
+.post-card-description {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.post-card-button {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #fff;
+  background-color: #3498db;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.post-card-button:hover {
+  background-color: #2075c1;
+}
+
+/* About Us Section Styles */
+.about-us {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.about-us-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+  letter-spacing: 1px;
+}
+
+.about-us-description {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.about-us-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #fff;
+  background-color: #3498db;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.about-us-button:hover {
+  background-color: #2075c1;
+}
+
+/* Subscribe Section Styles */
+.subscribe {
+  text-align: center;
+}
+
+.subscribe-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+  letter-spacing: 1px;
+}
+
+.subscribe-description {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.subscribe-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #fff;
+  background-color: #3498db;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.subscribe-button:hover {
+  background-color: #2075c1;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .post-card-title {
+    font-size: 1.2rem;
+  }
+
+  .post-card-description,
+  .about-us-description,
+  .subscribe-description {
+    font-size: 0.9rem;
+  }
+}
+
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #333;
+  color: white;
+} 
+
+/* .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #333;
+  border-radius: 6px;
+  color: white;
+  z-index: 1000; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+} */
+
+
+/* Add these styles for your default dropdown */
+.dropdown {
+  display: none;
+  position: absolute;
+  background-color: #fff; /* Change the background color as needed */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown a {
+  color: black; /* Change the text color as needed */
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {
+  background-color: #ddd; /* Change the hover background color as needed */
+}
+
+/* Styles for the "Posts" NavLink with dropdown */
+.nav-link.with-dropdown {
+  position: relative;
+}
+
+.nav-link.with-dropdown:hover .dropdown {
+  display: block;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 600px) {
+  .nav-links.show {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-link.with-dropdown {
+    text-align: center;
+  }
+
+  .dropdown {
+    position: static;
+    display: none;
+    width: 100%;
+  }
+
+  .nav-link.with-dropdown:hover .dropdown {
+    display: block;
+    position: static;
+    width: 100%;
+  }
+}
+
+
+
+
+ .logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-icon {
+  font-size: 2rem;
+  margin-right: 0.5rem;
+}
+
+.logo-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+  margin: 0 15px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #68c3a3;
+}
+
+.menu-toggle {
+  cursor: pointer;
+  display: none; 
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+@media screen and (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #333;
+    z-index: 1;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border-top: 1px solid #555;
+  }
+
+  .nav-links.show {
+    display: flex;
+    animation: slideIn 0.3s ease-in-out;
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .bar {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+
+  .nav-link {
+    margin: 15px 0;
+  }
+} 
+
+
+
+
+
+
+/* Footer */
+
+
+
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-radius: 6px;
+}
+
+.footer p {
+  margin: 0;
+}
+
+
+/* Registration */
+
+
+.register-container {
+  max-width: 700px;
+  margin: auto;
+  margin-top: 120px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.register-label {
+  margin-bottom: 8px;
+}
+
+.register-input {
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.register-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.login-link {
+  margin-top: 16px;
+}
+
+/* src/styles/Login.css */
+
+.login-container {
+  max-width: 700px;
+  margin: auto;
+  margin-top: 150px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-label {
+  margin-bottom: 8px;
+}
+
+.login-input {
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.login-button {
+  background-color: #28a745;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.register-link {
+  margin-top: 16px;
+}
+
+
+/* PostList */
+
+/* Updated CSS with more advanced styling */
+.welcome-message {
+  background-color: #3498db;
+  color: #fff;
+  padding: 40px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Stylish heading */
+.welcome {
+  font-size: 2em;
+  margin-bottom: 10px;
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+}
+
+/* Subtle shadows and animations for content */
+.content1, .content2 {
+  font-size: 1.2em;
+  margin-bottom: 15px;
+  color: #ecf0f1;
+  padding: 10px;
+  border-radius: 4px;
+  /* background-color: #2980b9; */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.post-list-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  background: linear-gradient(to right, #f0f0f0, #e0e0e0);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-top: 40px;
+}
+
+.post-list-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.post-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.post-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 10px;
+  padding: 20px;
+  width: calc(33.33% - 20px);
+  height: 280px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.post-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.post-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* .post-content {
+  color: #666;
+} */
+
+/* Add these styles to your CSS */
+.post-content {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* You can adjust the width or max-width according to your layout */
+  width: 300px;
+  /* or max-width: 300px; */
+}
+
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.post-item,
+.post-title,
+.post-content {
+  animation: fadeIn 0.5s ease-in-out;
+} 
+
+.read-more-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.read-more-button:hover {
+  background-color: #2980b9;
+}
+
+
+/* Media query for screens smaller than 768px (typical tablets) */
+@media only screen and (max-width: 768px) {
+  .post-item {
+    width: calc(50% - 20px);
+  }
+}
+
+/* Media query for screens smaller than 480px (typical smartphones) */
+@media only screen and (max-width: 480px) {
+  .post-item {
+    width: calc(100% - 20px);
+  }
+}
+
+
+/* Mobile-first styles */
+.create-post {
+  width: 90%;
+  height: 500px;
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.post-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 1.2em;
+  margin-bottom: 8px;
+}
+
+.post-input,
+.post-textarea {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.post-button {
+  padding: 12px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2em;
+  margin-top: 30px;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 600px) {
+  .create-post {
+    padding: 10px;
+    height: 400px;
+  }
+
+  .post-input,
+  .post-textarea {
+    font-size: 14px;
+  }
+
+  .post-button {
+    font-size: 1em;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  .create-post {
+    width: 80%;
+  }
+}
+
+
+
+
+/* FullPostContainer.css */
+
+.post-container1 {
+  border: 1px solid black;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding: 20px;
+  margin-bottom: 60px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.post-container1:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background-color: #f8f8f8;
+}
+
+.loading {
+  font-size: 18px;
+  font-weight: bold;
+  color: #888;
+}
+
+/* FullPost.css */
+
+.post-title1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.post-content1 {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.post-author1 {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.post-created-at1{
+  font-size: 14px;
+  color: #888;
+  text-align: left;
+}
+
+.last-seen1 {
+  font-size: 16px;
+  color: #555;
+  text-align: right;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.last-seen1:before {
+  content: '\2022'; /* Add a bullet point separator */
+  margin: 0 10px; /* Adjust spacing */
+  color: #666;
+  font-size: 18px; /* Increase bullet point size */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.last-seen1 span {
+  margin-right: 10px; /* Adjust spacing between text and bullet point */
+  font-weight: bold; /* Make the text bold */
+}
+
+.last-seen1 a {
+  text-decoration: none; /* Remove underline from links */
+  color: #0077cc; /* Link color */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.last-seen1 .timestamp {
+  font-size: 12px; /* Smaller font size for timestamp */
+  color: #999; /* Lighter color for timestamp */
+  margin-right: 5px; /* Adjust spacing between text and timestamp */
+}
+
+.last-seen1 .status {
+  font-style: italic; /* Italicize the status */
+  color: #777; /* Color for the status */
+}
+
+.last-seen1:hover {
+  color: #0088cc; /* Change text color on hover */
+}
+
+.last-seen1:hover:before {
+  color: #0099cc; /* Change bullet point color on hover */
+}
+
+.last-seen1:hover a {
+  color: #005580; /* Change link color on hover */
+}
+
+.last-seen1:hover .timestamp {
+  color: #666; /* Change timestamp color on hover */
+}
+
+.last-seen1:hover .status {
+  color: #555; /* Change status color on hover */
+}
+
+.edit-icon{
+  margin-left: 10px;
+  text-decoration: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+
+.delete-icon{
+  margin-left: 10px;
+  text-decoration: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #d9004c;
+  transition: color 0.3s ease;
+}
+
+
+.edit-icon:hover{
+  color:#0056b3;
+}
+
+.delete-icon:hover {
+  color: red;
+}
+
+
+/* Add hover effect on links */
+.post-title1 a,
+.read-more-link {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.post-title1 a:hover,
+.read-more-link:hover {
+  color: #0056b3;
+}
+
+/* Add box shadow on hover */
+.post-container1:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Add responsive design */
+@media only screen and (max-width: 768px) {
+  .post-container1 {
+    padding: 15px;
+    margin-bottom: 40px;
+  }
+
+  .post-title1 {
+    font-size: 24px;
+  }
+
+  .post-content1 {
+    font-size: 14px;
+  }
+}
+
+
+
+/* Add this CSS in a separate file, for example, UpdatePost.css */
+
+.update-post-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.update-post-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.update-post-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.update-post-label {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.update-post-input {
+  padding: 8px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.update-post-textarea {
+  padding: 8px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  height: 390px; /* Adjust the height as needed */
+  resize: vertical; /* Allow vertical resizing */
+}
+
+.update-post-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+.update-post-button:hover {
+  background-color: #0056b3;
+}
+
+
+
+/* commentForm */
+
+/* CommentForm.css (or include these styles in your existing stylesheet) */
+
+/* Container for the CommentForm */
+.comment-form-container {
+  max-width: 600px; /* Adjust the maximum width as needed */
+  margin: auto;
+}
+
+/* CommentForm styles */
+.comment-form {
+  margin-top: 20px;
+}
+
+.comment-form__label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.comment-form__textarea {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.comment-form__submit {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.comment-form__submit:hover {
+  background-color: #45a049;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 600px) {
+  .comment-form-container {
+    padding: 0 10px;
+  }
+
+  .comment-form__textarea {
+    font-size: 14px;
+  }
+}
+
+
+/* commentList */
+
+
+.comment-list-container {
+  max-width: 1200px; /* Adjust the maximum width as needed */
+  margin: auto;
+  margin-top: 30px;
+  border:1px solid black !important;
+  border-radius: 10px !important;
+}
+
+/* CommentList styles */
+.comment-list__title {
+  text-align: center;
+  text-decoration:underline;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.comment-list__list {
+  list-style: none;
+  padding: 0;
+}
+
+.comment-list__item {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 95%;
+  margin-left: 20px;
+}
+
+.comment-list__feedback {
+  margin-bottom: 5px;
+}
+
+.comment-list__timestamp {
+  font-size: 12px;
+  color: #888;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 600px) {
+  .comment-list-container {
+    padding: 0 10px;
+  }
+
+  .comment-list__item {
+    padding: 8px;
+  }
 }
