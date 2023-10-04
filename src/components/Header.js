@@ -1,17 +1,13 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { PiGitlabLogoFill } from 'react-icons/pi';
-import { AiOutlineLogout } from 'react-icons/ai'; // Import the power-off icon
+import { AiOutlineLogout } from 'react-icons/ai';
 
-// New Dropdown Component
 const PostsDropdown = () => {
-  // Add your dropdown content and logic here
   return (
     <div className="dropdown">
       <Link to="/create-post">CreatePost</Link>
       <Link to="/login">Login</Link>
-      {/* Add more dropdown items as needed */}
     </div>
   );
 };
@@ -27,8 +23,11 @@ const Header = () => {
     <div>
       <header className="header">
         <div className="logo">
-          <PiGitlabLogoFill className="logo-icon" />
-          <span className="logo-title">Mix</span>
+          {/* Use Link to navigate to home page */}
+          <Link to="/">
+            <PiGitlabLogoFill className="logo-icon" />
+            <span className="logo-title">Mix</span>
+          </Link>
         </div>
         <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
           <div className="menu-toggle" onClick={toggleMenu}>
@@ -41,7 +40,6 @@ const Header = () => {
               Home
             </Link>
             <div className="nav-link with-dropdown">
-              {/* Add the Posts NavLink with the dropdown component */}
               <span>More</span>
               <PostsDropdown />
             </div>
@@ -49,7 +47,7 @@ const Header = () => {
               About Us
             </Link>
             <Link to="/logout" className="nav-link" onClick={toggleMenu}>
-              <AiOutlineLogout /> {/* Replace with your preferred logout icon */}
+              <AiOutlineLogout />
             </Link>
           </div>
         </nav>
