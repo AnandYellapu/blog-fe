@@ -29,8 +29,8 @@ const App = () => {
         <Route path="/full/:id" element={<FullPost />} />
         <Route path="/update/:id"  element={<UpdatePost />} />
         <Route path="/delete/:id"  element={<DeletePost />} />
-        <Route path="/comment" element={<CommentForm />} />
-        <Route path="/comment/:commentId" element={<CommentList />} />
+        <Route path="/create-comment" element={<CommentForm />} />
+        <Route path="/:postId" element={<CommentList />} />
         <Route path="/login"  element={<Login />} />
         <Route path="/register"  element={<Register />} />
         <Route path="/logout" element={<Logout />} />

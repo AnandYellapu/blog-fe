@@ -39,18 +39,26 @@ const FullPostContainer = () => {
     <div className="full-post-container">
       {post ? <FullPost post={post} /> : <p className="loading">Loading...</p>}
       <div className="comments-container">
-        <CommentForm />
-        <CommentList />
+        <CommentForm postId={id} />
+        <CommentList postId={id} />
       </div>
     </div>
   );
 };
 
 const FullPost = ({ post }) => {
+  // Splitting post content into an array of paragraphs
+  const contentParagraphs = post.content.split('\n').map((paragraph, index) => (
+    <p key={index} className="post-content1">
+      {paragraph}
+    </p>
+  ));
+
   return (
     <div className="post-container1">
       <h2 className="post-title1">{post.title}</h2>
-      <p className="post-content1">{post.content}</p>
+      {/* Rendering the array of paragraphs */}
+      {contentParagraphs}
       <p className="post-author1">Author: {post.author}</p>
       <p className="post-created-at1">Created At: {new Date(post.createdAt).toLocaleString()}</p>
       {post.lastSeenTime && (

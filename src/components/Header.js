@@ -23,11 +23,8 @@ const Header = () => {
     <div>
       <header className="header">
         <div className="logo">
-          {/* Use Link to navigate to home page */}
-          <Link to="/">
             <PiGitlabLogoFill className="logo-icon" />
             <span className="logo-title">Mix</span>
-          </Link>
         </div>
         <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
           <div className="menu-toggle" onClick={toggleMenu}>

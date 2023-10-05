@@ -1,13 +1,14 @@
-
 // src/components/Register.js
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom'; // Assuming you are using react-router for navigation
+import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Register = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -16,14 +17,21 @@ const Register = () => {
       // Make a POST request to register a new user
       await axios.post('http://localhost:1200/api/users/register', { username, email, password });
 
-      // Optionally, you can redirect to the login page or handle the response accordingly
-      // history.push('/login');
+      toast.success('Successfully registered!');
+      navigate('/login');
     } catch (error) {
       console.error(error);
+
+      if (error.response && error.response.status === 400) {
+        // 409 Conflict status code indicates that the username or email already exists
+        toast.error('Username or email already exists. Please choose a different one.');
+      } else {
+        toast.error('Registration failed. Please try again.');
+      }
     }
   };
 
-  return (
+      return (
     <div className="register-container">
       <h2>Register</h2>
       <form onSubmit={handleSubmit} className="register-form">
@@ -47,3 +55,7 @@ const Register = () => {
 };
 
 export default Register;
+
+  
+
+  

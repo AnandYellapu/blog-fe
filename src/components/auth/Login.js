@@ -1,7 +1,8 @@
 // src/components/Login.js
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Link, useNavigate } from 'react-router-dom'; // Assuming you are using react-router for navigation
+import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';  // Import the toast module
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -18,10 +19,16 @@ const Login = () => {
       // Store the token in local storage or a state management solution
       sessionStorage.setItem('token', response.data.token);
 
+      // Display success notification
+      toast.success('Login successful!');
+
       // Optionally, you can redirect to the home page or handle the response accordingly
       navigate('/');
     } catch (error) {
       console.error(error);
+
+      // Display error notification
+      toast.error('Invalid credentials. Please try again.');
     }
   };
 

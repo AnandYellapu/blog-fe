@@ -1,11 +1,16 @@
+
+
+// src/components/UpdatePost.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify'; // Import the toast module
 
 const UpdatePost = () => {
   const { id } = useParams();
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -60,10 +65,16 @@ const UpdatePost = () => {
       // Make a PUT request to update the post
       await axios.put(`http://localhost:1200/api/posts/${id}`, { title, content }, { headers });
 
+      // Display success notification
+      toast.success('Post updated successfully!');
+
       // Optionally, you can redirect to the post details or handle the response accordingly
-      // history.push(`/posts/${id}`);
+      navigate(`/full/${id}`);
     } catch (error) {
       console.error(error);
+
+      // Display error notification
+      toast.error('Error updating post. Please try again.');
     }
   };
 

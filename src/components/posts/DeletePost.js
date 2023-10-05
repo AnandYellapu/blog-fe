@@ -1,8 +1,12 @@
+
+
+// src/components/DeletePost.js
 import React, { useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import { confirmAlert } from 'react-confirm-alert';
-import 'react-confirm-alert/src/react-confirm-alert.css'; // Import the styles
+import 'react-confirm-alert/src/react-confirm-alert.css';
+import { toast } from 'react-toastify';  // Import the toast module
 
 const DeletePost = () => {
   const navigate = useNavigate();
@@ -37,6 +41,9 @@ const DeletePost = () => {
                 // Make a DELETE request to delete the post
                 await axios.delete(`http://localhost:1200/api/posts/${id}`, { headers });
 
+                // Display success notification
+                toast.success('Post deleted successfully!');
+
                 // Redirect after successful deletion
                 navigate('/');
               },
@@ -44,6 +51,7 @@ const DeletePost = () => {
             {
               label: 'No',
               onClick: () => {
+                navigate(-1);
                 // Do nothing if the user chooses not to delete
               },
             },
@@ -51,6 +59,9 @@ const DeletePost = () => {
         });
       } catch (error) {
         console.error(error);
+
+        // Display error notification
+        toast.error('Error deleting post. Please try again.');
       }
     };
 

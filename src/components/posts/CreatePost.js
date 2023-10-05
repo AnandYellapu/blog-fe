@@ -1,6 +1,8 @@
 
+
 // src/components/CreatePost.js
 import React, { useState } from 'react';
+import { toast } from 'react-toastify'; // Import the toast module
 
 const CreatePost = () => {
   const [title, setTitle] = useState('');
@@ -21,8 +23,17 @@ const CreatePost = () => {
       });
 
       if (!response.ok) {
+        toast.info('Please login to create');
         throw new Error('Error creating post');
       }
+
+      // Clear the form fields
+      setTitle('');
+      setContent('');
+      setAuthor('');
+
+      // Display success notification
+      toast.success('Post created successfully!');
 
       const newPost = await response.json();
       console.log('New Post:', newPost);

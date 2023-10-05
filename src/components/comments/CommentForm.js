@@ -1,65 +1,54 @@
-// CommentForm.js
-import React, { useState } from 'react';
-import axios from 'axios';
 
-const CommentForm = ({ postId, onCommentAdded }) => {
-  const [feedback, setFeedback] = useState('');
+
+// src/components/comments/CommentForm.js
+import React, { useState } from 'react';
+import { toast } from 'react-toastify';
+
+const CommentForm = ({ postId }) => {
+  const [content, setContent] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const token = sessionStorage.getItem('token');
+      const response = await fetch('http://localhost:1200/api/comments/create-comment', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-auth-token': sessionStorage.getItem('token'),
+        },
+        body: JSON.stringify({ postId, content }),
+      });
 
-      if (!token) {
-        console.error('No token, cannot add comment');
-        return;
+      if (!response.ok) {
+        toast.error('Error creating comment');
+        throw new Error('Error creating comment');
       }
 
-      const headers = {
-        'Content-Type': 'application/json',
-        'x-auth-token': token,
-      };
+      // Clear the form field
+      setContent('');
 
-      // Clear the text area before making the POST request
-      setFeedback('');
-
-      await axios.post(
-        'http://localhost:1200/api/comments/comment',
-        {
-          feedback,
-          postId,
-        },
-        { headers }
-      );
-
-      // Optionally, you can fetch updated comments and update the state
-      onCommentAdded();
+      // Display success notification
+      toast.success('Comment created successfully!');
     } catch (error) {
       console.error(error);
     }
   };
 
   return (
-    <div className="comment-form-container">
-      <form onSubmit={handleSubmit} className="comment-form">
-        <label className="comment-form__label">
-          Comment:
-          <textarea
-            value={feedback}
-            onChange={(e) => setFeedback(e.target.value)}
-            className="comment-form__textarea"
-            placeholder='add a comment...'
-          />
-        </label>
-        <br />
-        <button className="comment-form__submit" type="submit">
-          Add Comment
-        </button>
-      </form>
-    </div>
+    <form className="comment-form" onSubmit={handleSubmit}>
+      <label className="comment-label" htmlFor="content">Comment:</label>
+      <textarea
+        className="comment-textarea"
+        id="content"
+        value={content}
+        onChange={(e) => setContent(e.target.value)}
+        placeholder='add comment...'
+        required
+      />
+      <button className="comment-submit-btn" type="submit">Post Comment</button>
+    </form>
   );
 };
 
 export default CommentForm;
-

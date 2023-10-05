@@ -1,9 +1,9 @@
 // src/components/Logout.js
 import { useEffect } from 'react';
-// import { FiLogOut } from 'react-icons/fi';
 import { useNavigate } from 'react-router-dom';
-import { confirmAlert } from 'react-confirm-alert'; // Import the confirmAlert function
-import 'react-confirm-alert/src/react-confirm-alert.css'; // Import the styles
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
+import { toast } from 'react-toastify';  // Import the toast module
 
 const Logout = () => {
   const navigate = useNavigate();
@@ -22,6 +22,9 @@ const Logout = () => {
 
             // Optionally, you can redirect to the home page or handle the logout process accordingly
             navigate('/');
+
+            // Display success notification
+            toast.success('Logged out successfully!');
           },
         },
         {
@@ -35,6 +38,8 @@ const Logout = () => {
     });
   }, [navigate]);
 
+  // Empty component - no UI elements to render
+  return null;
 };
 
 export default Logout;
