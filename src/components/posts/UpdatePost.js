@@ -10,6 +10,7 @@ const UpdatePost = () => {
   const { id } = useParams();
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
+  const [imageUrl, setImageUrl] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -63,7 +64,7 @@ const UpdatePost = () => {
       };
 
       // Make a PUT request to update the post
-      await axios.put(`http://localhost:1200/api/posts/${id}`, { title, content }, { headers });
+      await axios.put(`http://localhost:1200/api/posts/${id}`, { title, content, imageUrl }, { headers });
 
       // Display success notification
       toast.success('Post updated successfully!');
@@ -91,6 +92,14 @@ const UpdatePost = () => {
           required
         />
 
+        <label htmlFor="imageUrls">Image URL:</label>
+        <textarea
+          id="imageUrls"
+          className="post-textarea"
+          value={imageUrl}
+          onChange={(e) => setImageUrl(e.target.value)}
+        />
+
         <label className="update-post-label">Content:</label>
         <textarea
           value={content}
@@ -98,6 +107,8 @@ const UpdatePost = () => {
           className="update-post-textarea"
           required
         />
+
+        
 
         <button type="submit" className="update-post-button">Update Post</button>
       </form>

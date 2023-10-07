@@ -15,7 +15,8 @@ import CommentList from './components/comments/CommentList';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import Logout from './components/auth/Logout';
-
+import ForgotPassword from './components/auth/ForgotPassword';
+import ResetPassword from './components/auth/ResetPassword';
 
 const App = () => {
   return (
@@ -34,6 +35,8 @@ const App = () => {
         <Route path="/login"  element={<Login />} />
         <Route path="/register"  element={<Register />} />
         <Route path="/logout" element={<Logout />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-password/:resetToken" element={<ResetPassword />} />
       </Routes>
      <Footer />
     </BrowserRouter>

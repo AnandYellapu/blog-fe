@@ -52,3 +52,82 @@ const CommentList = ({ postId }) => {
 };
 
 export default CommentList;
+
+
+
+
+// // src/components/comments/CommentList.js
+// import React, { useState, useEffect } from 'react';
+// import axios from 'axios';
+// import { IoMdTrash } from 'react-icons/io';
+
+// const CommentList = ({ postId }) => {
+//   const [comments, setComments] = useState([]);
+
+//   useEffect(() => {
+//     const fetchComments = async () => {
+//       try {
+//         const token = sessionStorage.getItem('token');
+
+//         if (!token) {
+//           console.error('No token, cannot fetch comments');
+//           return;
+//         }
+
+//         const headers = {
+//           'Content-Type': 'application/json',
+//           'x-auth-token': token,
+//         };
+
+//         const response = await axios.get(`http://localhost:1200/api/comments/${postId}`, { headers });
+//         setComments(response.data);
+//       } catch (error) {
+//         console.error('Error fetching comments:', error);
+//       }
+//     };
+
+//     fetchComments();
+//   }, [postId]);
+
+//   const handleDeleteComment = async (commentId) => {
+//     try {
+//       const token = sessionStorage.getItem('token');
+
+//       if (!token) {
+//         console.error('No token, cannot delete comment');
+//         return;
+//       }
+
+//       const headers = {
+//         'Content-Type': 'application/json',
+//         'x-auth-token': token,
+//       };
+
+//       const response = await axios.delete(`http://localhost:1200/api/comments/${commentId}`, { headers });
+//       console.log('Delete Comment Response:', response.data);
+
+//       // Update comments state after successful deletion
+//       setComments(prevComments => prevComments.filter(comment => comment._id !== commentId));
+//     } catch (error) {
+//       console.error('Error deleting comment:', error);
+//     }
+//   };
+
+//   return (
+//     <div>
+//       <h3>Comments</h3>
+//       <ul>
+//         {comments && comments.map(comment => (
+//           <li key={comment._id}>
+//             <p>{comment.content}</p>
+//             <p>Posted by: {comment.userId}</p>
+//             {/* Use IoMdTrash as delete icon */}
+//             <span onClick={() => handleDeleteComment(comment._id)}><IoMdTrash /></span>
+//           </li>
+//         ))}
+//       </ul>
+//     </div>
+//   );
+// };
+
+// export default CommentList;

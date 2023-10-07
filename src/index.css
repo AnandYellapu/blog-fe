@@ -98,9 +98,11 @@ html, body {
 }
 
 .post-card {
-  width: 800px;
+  width: 100%;
+  max-width: 800px;
   border: 1px solid #ddd;
   padding: 20px;
+  margin: 0 auto;
   margin-bottom: 20px;
   border-radius: 5px;
   transition: transform 0.3s ease;
@@ -172,44 +174,15 @@ html, body {
   background-color: #2075c1;
 }
 
-/* Subscribe Section Styles */
-.subscribe {
-  text-align: center;
-}
-
-.subscribe-title {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #333;
-  letter-spacing: 1px;
-}
-
-.subscribe-description {
-  font-size: 1rem;
-  color: #777;
-  margin-bottom: 20px;
-}
-
-.subscribe-button {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 1rem;
-  text-decoration: none;
-  color: #fff;
-  background-color: #3498db;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-  margin-bottom: 20px;
-}
-
-.subscribe-button:hover {
-  background-color: #2075c1;
-}
-
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
   .hero-title {
     font-size: 2rem;
+  }
+
+  .post-card{
+    width: 100%;
+    padding: 15px;
   }
 
   .post-card-title {
@@ -220,6 +193,13 @@ html, body {
   .about-us-description,
   .subscribe-description {
     font-size: 0.9rem;
+  }
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 600px) {
+  .post-card {
+    padding: 15px;  /* Adjust padding for smaller screens */
   }
 }
 
@@ -486,6 +466,22 @@ html, body {
   border-radius: 4px;
 }
 
+/* Inside your CSS file or styled components */
+.forgot-password-link {
+  text-align: center;
+  margin-top: 10px; /* Adjust the spacing as needed */
+}
+
+.forgot-password-link a {
+  color: #007bff; /* Link color */
+  text-decoration: none; /* Remove underline */
+}
+
+.forgot-password-link a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+
 .login-button {
   background-color: #28a745;
   color: #fff;
@@ -496,13 +492,57 @@ html, body {
 }
 
 .register-link {
+  text-align: center;
   margin-top: 16px;
 }
+
+/* Forgot-password */
+
+.forgot-password-container {
+  max-width: 400px;
+  margin: auto;
+  margin-top: 160px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.forgot-password-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.forgot-password-label {
+  margin-bottom: 8px;
+}
+
+.forgot-password-input {
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.forgot-password-button {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.forgot-password-button:hover {
+  background-color: #0056b3;
+}
+
+
 
 
 /* PostList */
 
-/* Updated CSS with more advanced styling */
 .welcome-message {
   background-color: #3498db;
   color: #fff;
@@ -717,7 +757,7 @@ html, body {
 
 /* FullPostContainer.css */
 
-.post-container1 {
+ .post-container1 {
   border: 1px solid black;
   max-width: 1200px;
   margin: 0 auto;
@@ -741,7 +781,18 @@ html, body {
   color: #888;
 }
 
-/* FullPost.css */
+
+.post-image1 {
+  max-width: 100%;
+  height: 220px;
+  margin: 10px auto; /* Set margin-top and margin-bottom to auto, and left/right to auto */
+  display: block; /* Ensure it's treated as a block element */
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
 
 .post-title1 {
   font-size: 28px;
@@ -777,57 +828,57 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  transition: color 0.3s ease; /* Smooth color transition on hover */
+  transition: color 0.3s ease; 
 }
 
 .last-seen1:before {
-  content: '\2022'; /* Add a bullet point separator */
-  margin: 0 10px; /* Adjust spacing */
+  content: '\2022';
+  margin: 0 10px; 
   color: #666;
-  font-size: 18px; /* Increase bullet point size */
-  transition: color 0.3s ease; /* Smooth color transition on hover */
+  font-size: 18px;
+  transition: color 0.3s ease;
 }
 
 .last-seen1 span {
-  margin-right: 10px; /* Adjust spacing between text and bullet point */
-  font-weight: bold; /* Make the text bold */
+  margin-right: 10px; 
+  font-weight: bold; 
 }
 
 .last-seen1 a {
-  text-decoration: none; /* Remove underline from links */
-  color: #0077cc; /* Link color */
-  transition: color 0.3s ease; /* Smooth color transition on hover */
+  text-decoration: none;
+  color: #0077cc;
+  transition: color 0.3s ease;
 }
 
 .last-seen1 .timestamp {
-  font-size: 12px; /* Smaller font size for timestamp */
-  color: #999; /* Lighter color for timestamp */
-  margin-right: 5px; /* Adjust spacing between text and timestamp */
+  font-size: 12px; 
+  color: #999; 
+  margin-right: 5px; 
 }
 
 .last-seen1 .status {
-  font-style: italic; /* Italicize the status */
-  color: #777; /* Color for the status */
+  font-style: italic; 
+  color: #777;
 }
 
 .last-seen1:hover {
-  color: #0088cc; /* Change text color on hover */
+  color: #0088cc; 
 }
 
 .last-seen1:hover:before {
-  color: #0099cc; /* Change bullet point color on hover */
+  color: #0099cc; 
 }
 
 .last-seen1:hover a {
-  color: #005580; /* Change link color on hover */
+  color: #005580; 
 }
 
 .last-seen1:hover .timestamp {
-  color: #666; /* Change timestamp color on hover */
+  color: #666;
 }
 
 .last-seen1:hover .status {
-  color: #555; /* Change status color on hover */
+  color: #555;
 }
 
 .edit-icon{
@@ -858,7 +909,7 @@ html, body {
 }
 
 
-/* Add hover effect on links */
+
 .post-title1 a,
 .read-more-link {
   color: #007bff;
@@ -871,13 +922,13 @@ html, body {
   color: #0056b3;
 }
 
-/* Add box shadow on hover */
+
 .post-container1:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.2);
   transition: box-shadow 0.3s ease;
 }
 
-/* Add responsive design */
+
 @media only screen and (max-width: 768px) {
   .post-container1 {
     padding: 15px;
@@ -940,6 +991,7 @@ html, body {
   cursor: pointer;
   border: none;
   border-radius: 4px;
+  margin-bottom: 60px;
 }
 
 .update-post-button:hover {
@@ -1009,7 +1061,7 @@ html, body {
   max-width: 1200px;
   margin: 0 auto;
   margin-top: 20px;
-  margin-bottom: 80px;
+  margin-bottom: 70px;
   padding: 20px;
   border: 1px solid black !important;
   border-radius: 7px !important;
@@ -1099,4 +1151,23 @@ html, body {
   to {
     transform: scale(1.1);
   }
+}
+
+
+
+/* DeletePostButton.css */
+
+.delete-button {
+  background-color: #ff0000;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.delete-button.loading {
+  cursor: not-allowed;
+  opacity: 0.7;
 }
