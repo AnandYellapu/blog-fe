@@ -23,7 +23,7 @@
 //     };
 
 //     // Fetch posts from the server
-//     axios.get('http://localhost:1200/api/posts/post-list', { headers })
+//     axios.get('https://blog-sl4b.onrender.com/api/posts/post-list', { headers })
 //       .then(response => {
 //         setPosts(response.data);
 //         console.log('Fetched Posts:', response.data); // Log the fetched posts
@@ -93,7 +93,7 @@ const PostList = () => {
     };
 
     // Fetch posts from the server
-    axios.get('http://localhost:1200/api/posts/post-list', { headers })
+    axios.get('https://blog-sl4b.onrender.com/api/posts/post-list', { headers })
       .then(response => {
         setPosts(response.data);
         console.log('Fetched Posts:', response.data); // Log the fetched posts

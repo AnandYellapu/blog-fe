@@ -21,7 +21,7 @@ const CommentList = ({ postId }) => {
           'x-auth-token': token,
         };
 
-        const response = await axios.get(`http://localhost:1200/api/comments/${postId}`, { headers });
+        const response = await axios.get(`https://blog-sl4b.onrender.com/api/comments/${postId}`, { headers });
         console.log('Fetched Comments:', response.data);  // Add this line to check what's fetched
         setComments(response.data);
       } catch (error) {
@@ -79,7 +79,7 @@ export default CommentList;
 //           'x-auth-token': token,
 //         };
 
-//         const response = await axios.get(`http://localhost:1200/api/comments/${postId}`, { headers });
+//         const response = await axios.get(`https://blog-sl4b.onrender.com/api/comments/${postId}`, { headers });
 //         setComments(response.data);
 //       } catch (error) {
 //         console.error('Error fetching comments:', error);
@@ -103,7 +103,7 @@ export default CommentList;
 //         'x-auth-token': token,
 //       };
 
-//       const response = await axios.delete(`http://localhost:1200/api/comments/${commentId}`, { headers });
+//       const response = await axios.delete(`https://blog-sl4b.onrender.com/api/comments/${commentId}`, { headers });
 //       console.log('Delete Comment Response:', response.data);
 
 //       // Update comments state after successful deletion

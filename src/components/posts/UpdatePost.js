@@ -31,7 +31,7 @@ const UpdatePost = () => {
           'x-auth-token': token,
         };
 
-        const response = await axios.get(`http://localhost:1200/api/posts/${id}`, { headers });
+        const response = await axios.get(`https://blog-sl4b.onrender.com/api/posts/${id}`, { headers });
         const postData = response.data;
 
         setTitle(postData.title);
@@ -64,7 +64,7 @@ const UpdatePost = () => {
       };
 
       // Make a PUT request to update the post
-      await axios.put(`http://localhost:1200/api/posts/${id}`, { title, content, imageUrl }, { headers });
+      await axios.put(`https://blog-sl4b.onrender.com/api/posts/${id}`, { title, content, imageUrl }, { headers });
 
       // Display success notification
       toast.success('Post updated successfully!');

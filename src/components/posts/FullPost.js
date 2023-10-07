@@ -26,7 +26,7 @@ const FullPostContainer = () => {
           'x-auth-token': token,
         };
 
-        const response = await axios.get(`http://localhost:1200/api/posts/${id}`, { headers });
+        const response = await axios.get(`https://blog-sl4b.onrender.com/api/posts/${id}`, { headers });
         setPost(response.data);
         setLoading(false);
       } catch (error) {
@@ -123,7 +123,7 @@ export default FullPostContainer;
 //           'x-auth-token': token,
 //         };
 
-//         const response = await axios.get(`http://localhost:1200/api/posts/${id}`, { headers });
+//         const response = await axios.get(`https://blog-sl4b.onrender.com/api/posts/${id}`, { headers });
 //         setPost(response.data);
 //         setLoading(false);
 //       } catch (error) {

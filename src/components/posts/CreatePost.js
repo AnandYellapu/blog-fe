@@ -13,7 +13,7 @@
 //     e.preventDefault();
 
 //     try {
-//       const response = await fetch('http://localhost:1200/api/posts/create-post', {
+//       const response = await fetch('https://blog-sl4b.onrender.com/api/posts/create-post', {
 //         method: 'POST',
 //         headers: {
 //           'Content-Type': 'application/json',
@@ -103,7 +103,7 @@ const CreatePost = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:1200/api/posts/create-post', {
+      const response = await fetch('https://blog-sl4b.onrender.com/api/posts/create-post', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -39,7 +39,7 @@
 //               label: 'Yes',
 //               onClick: async () => {
 //                 // Make a DELETE request to delete the post
-//                 await axios.delete(`http://localhost:1200/api/posts/${id}`, { headers });
+//                 await axios.delete(`https://blog-sl4b.onrender.com/api/posts/${id}`, { headers });
 
 //                 // Display success notification
 //                 toast.success('Post deleted successfully!');
@@ -112,7 +112,7 @@
 //             label: 'Yes',
 //             onClick: async () => {
 //               // Make a DELETE request to delete the post
-//               await axios.delete(`http://localhost:1200/api/posts/${id}`, {
+//               await axios.delete(`https://blog-sl4b.onrender.com/api/posts/${id}`, {
                 
 //                 headers: {
 //                   'Content-Type': 'application/json',
@@ -181,7 +181,7 @@
 //       }
 
 //       // Make a DELETE request to delete the post
-//       await axios.delete(`http://localhost:1200/api/posts/${id}`, {
+//       await axios.delete(`https://blog-sl4b.onrender.com/api/posts/${id}`, {
 //         headers: {
 //           'Content-Type': 'application/json',
 //           'x-auth-token': token,
@@ -236,7 +236,7 @@ const DeletePostButton = () => {
         return;
       }
 
-      await axios.delete(`http://localhost:1200/api/posts/${id}`, {
+      await axios.delete(`https://blog-sl4b.onrender.com/api/posts/${id}`, {
         headers: {
           'Content-Type': 'application/json',
           'x-auth-token': token,

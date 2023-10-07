@@ -11,7 +11,7 @@ const CommentForm = ({ postId }) => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:1200/api/comments/create-comment', {
+      const response = await fetch('https://blog-sl4b.onrender.com/api/comments/create-comment', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
