@@ -160,6 +160,63 @@
 
 
 
+// import React, { useState, useEffect } from 'react';
+// import axios from 'axios';
+// import { useParams, useNavigate } from 'react-router-dom';
+
+// const DeletePostButton = () => {
+//   const { id } = useParams();
+//   const [loading, setLoading] = useState(false);
+//   const navigate = useNavigate();
+
+//   const handleDelete = async () => {
+//     try {
+//       setLoading(true);
+//       // Retrieve the authentication token from wherever it's stored (e.g., localStorage)
+//       const token = sessionStorage.getItem('token');
+
+//       if (!token) {
+//         console.error('No token, cannot delete post');
+//         return;
+//       }
+
+//       // Make a DELETE request to delete the post
+//       await axios.delete(`http://localhost:1200/api/posts/${id}`, {
+//         headers: {
+//           'Content-Type': 'application/json',
+//           'x-auth-token': token,
+//         },
+//       });
+//       // Assuming you have some logic to update the UI after successful deletion
+//       console.log('Post deleted successfully');
+
+//       // Navigate to the home page after successful deletion
+//       navigate('/');
+//     } catch (error) {
+//       console.error('Error deleting post:', error);
+//       // Handle and display the error to the user
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
+
+//   // useEffect to trigger handleDelete when the component mounts or 'id' changes
+//   useEffect(() => {
+//     handleDelete();
+//   }, [id]);
+
+//   return (
+//     <button onClick={handleDelete} disabled={loading}>
+//       {loading ? 'Deleting...' : 'Delete Post'}
+//     </button>
+//   );
+// };
+
+// export default DeletePostButton;
+
+
+
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
@@ -172,7 +229,6 @@ const DeletePostButton = () => {
   const handleDelete = async () => {
     try {
       setLoading(true);
-      // Retrieve the authentication token from wherever it's stored (e.g., localStorage)
       const token = sessionStorage.getItem('token');
 
       if (!token) {
@@ -180,17 +236,14 @@ const DeletePostButton = () => {
         return;
       }
 
-      // Make a DELETE request to delete the post
       await axios.delete(`http://localhost:1200/api/posts/${id}`, {
         headers: {
           'Content-Type': 'application/json',
           'x-auth-token': token,
         },
       });
-      // Assuming you have some logic to update the UI after successful deletion
-      console.log('Post deleted successfully');
 
-      // Navigate to the home page after successful deletion
+      console.log('Post deleted successfully');
       navigate('/');
     } catch (error) {
       console.error('Error deleting post:', error);
@@ -203,6 +256,7 @@ const DeletePostButton = () => {
   // useEffect to trigger handleDelete when the component mounts or 'id' changes
   useEffect(() => {
     handleDelete();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   return (
