@@ -5,7 +5,6 @@ const Contact = () => {
   return (
     <div>
       <h2>Contact Us</h2>
-      {/* Add a contact form or contact information */}
     </div>
   );
 };
